@@ -1,0 +1,109 @@
+:root {
+	--background-color: #FFFFFF;
+	--foreground-color: #f2f2f2;
+	--focus-color: #e6e6e6;
+	--button-background-color: #6fb3ff;
+	--button-text-color: #FFFFFF;
+	--input-background-color: #FFFFFF;
+	--link-color: #6fb3ff;
+	--text-color: #2c2a2b;
+	--top-bar-text-color: #3c3c3c;
+	--scrollbar-track-color: #e6e6e6;
+	--scrollbar-thumb-color: #8b8b8b;
+}
+
+
+body {
+	background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+  font-family: Verdana, sans-serif;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #444;
+	margin: auto;
+	max-width: 720px;
+}
+
+#content {
+	margin-top: 60px;
+}
+
+#footer {
+  float: left;
+  position: relative;
+  left: 25%;
+  text-align: center;
+}
+
+#footer p {
+  margin: 0px;
+  padding: 0px;
+}
+
+#footer a {
+  font-size: small;
+}
+
+.pagination {
+  display: block;
+  background: #f8f8f8;
+  font-size: 14px;
+  float: right;
+  border-radius: 5px;
+}
+
+.pagination ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.pagination li:not(:last-child){
+  border-bottom: 1px solid var(--focus-color);
+  padding-bottom: 5px;
+}
+
+.pill-menu {
+  position: relative;
+  background: #f8f8f8;
+  border-radius: 5px;
+  padding: 8px;
+  float: left;
+}
+
+.pill-menu ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.blog-posts {
+  float: left;
+  width: 100%;
+}
+
+.pill-menu li {
+  float: left;
+}
+
+.pill-menu a {
+  text-decoration: none;
+}
+
+.pill-menu li:not(:last-child){
+  border-right: 1px solid var(--focus-color);
+  margin-right: 8px;
+  padding-right: 8px;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.center {
+  justify-content: center !important;
+}

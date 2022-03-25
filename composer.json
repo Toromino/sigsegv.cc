@@ -1,0 +1,13 @@
+{
+    "name": "foxhkron/sigsegv.cc",
+    "type": "project",
+    "require": {
+        "michelf/php-markdown": "^1.9"
+    },
+    "authors": [
+        {
+            "name": "Toromino",
+            "email": "foxhkron@cybre.club"
+        }
+    ]
+}

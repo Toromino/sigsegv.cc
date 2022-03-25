@@ -1,0 +1,80 @@
+#about-wrapper {
+	/*background: url("https://cdn.hipwallpaper.com/i/1/37/vatRIk.jpg");*/
+    /*https://images.pexels.com/photos/3907936/pexels-photo-3907936.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260*/
+	background: url(../img/header.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: 0% 20%;
+
+	border-radius: 5px 5px 0px 0px;
+	height: 100px;
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#about-name {
+	color: #f2f2f2;
+	font-size: 22px;
+	bottom: 50px;
+	left: 140px;
+	position: absolute;
+}
+
+#about-picture {
+	border-radius: 5px;
+	position: absolute;
+	left: 20px;
+	bottom: -20px;
+	width: 100px;
+	z-index: 2;
+}
+
+#about-shadow {
+	background: linear-gradient(to top, rgba(29, 37, 44, 0.65) 20%, rgba(0, 0, 0, 0) 100%);
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	position: absolute;
+}
+
+/*
+
+// Not using flex for now to be compatible with browsers like Netsurf
+
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+#nav-border {
+	background: #f2f2f2;
+	border-radius: 0px 0px 5px 5px;
+}
+
+*/
+
+/* // NETSURF COMPATIBLE BLOCK // */
+#nav-border {
+	position: absolute;
+	top: 130px;
+	width: 720px;
+	background: #f2f2f2;
+    border-radius: 0px 0px 5px 5px;
+}
+.nav {
+	margin-left: 25%;
+  }
+  
+  .nav-link {
+      float: left;
+      padding: .5rem 1rem;
+      text-decoration: none;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
