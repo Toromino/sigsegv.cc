@@ -1,22 +1,6 @@
 <?php 
 use Michelf\MarkdownExtra;
 
-/*
-class Link {
-    private $page;
-    private $subpage;
-    private $style;
-
-    function generate() {
-        echo("?page=" . (empty($this->page) ? $_GET['page'] : $this->page));
-        echo(!empty($this->subpage) ? "&subpage=".$this->subpage : '');
-        if(!empty($_GET['post_title']) && $_GET['page'] == 'post') {
-            echo("&post_title=".$_GET['post_title']);
-        }
-        echo("&style=" . (empty($this->style) ? $_GET['style'] : $this->style));
-    }
-}*/
-
 // Maybe use an array
 function gen_url($page="", $subpage="", $style="") {
     print("?page=" . (empty($page) ? $_GET['page'] : $page));

@@ -16,7 +16,7 @@ wine; a compatibility layer to play Windows games on Linux).
 
 You will want to use a recent version of Proton, at the time of writing I used
 Proton version 5.13-5 - but anything starting from Proton 5.0 should
-work fine\!
+work fine!
 
 ## Patching the Paranoia renderer
 
