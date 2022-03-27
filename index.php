@@ -2,6 +2,10 @@
 // include Composer autoload
 require __DIR__ . '/vendor/autoload.php';
 
+if (!isset($_GET['page'])) {
+    $_GET['page'] = 'about';
+}
+
 if (!isset($_GET['style'])) {
     $_GET['style'] = 'light';
 }
