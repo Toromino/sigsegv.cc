@@ -20,10 +20,14 @@ class PostCollection {
 
     function __construct() {
         $dir = array_diff(scandir('posts'), array('.', '..'));
-        
+ 
         foreach ($dir as $value) {
             array_push($this->list, read_post(basename($value, '.md'), true));
         }
+
+	usort($this->list, function ($a, $b) {
+           return strtotime($a->date) - strtotime($b->date);
+        });
     }
 
     function format() {

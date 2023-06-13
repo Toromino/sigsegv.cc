@@ -82,7 +82,8 @@ body {
 }
 
 .blog-posts {
-  float: left;
+  display: inline-block;  
+  margin: unset;
   width: 100%;
 }
 

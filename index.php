@@ -16,7 +16,7 @@ if(!isset($_GET['subpage'])) {
 
 $GLOBALS['navmenu'] = array (
     array("about", "About"),
-    array("uses", "Uses"),
+    array("inventory", "Inventory"),
     array("posts", "Posts"),
     array("projects", "Projects")
 );
