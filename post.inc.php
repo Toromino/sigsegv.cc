@@ -23,11 +23,16 @@ class PostCollection {
  
         foreach ($dir as $value) {
             array_push($this->list, read_post(basename($value, '.md'), true));
-        }
+	}
 
 	usort($this->list, function ($a, $b) {
-           return strtotime($a->date) - strtotime($b->date);
-        });
+		if ($a->date == $b->date) {
+			return 0;
+		}
+		
+		return ($a->date > $b->date) ? -1 : 1;
+	});
+
     }
 
     function format() {
