@@ -18,11 +18,11 @@ class Post {
 class PostCollection {
     private $list = [];
 
-    function __construct() {
-        $dir = array_diff(scandir('posts'), array('.', '..'));
- 
-        foreach ($dir as $value) {
-            array_push($this->list, read_post(basename($value, '.md'), true));
+    function __construct($limit = 100) {
+	$files = glob('posts/*.md');
+	
+	foreach ($files as $file) {
+		array_push($this->list, read_post(basename($file, '.md'), true));
 	}
 
 	usort($this->list, function ($a, $b) {
@@ -33,15 +33,18 @@ class PostCollection {
 		return ($a->date > $b->date) ? -1 : 1;
 	});
 
+	$this->list = array_slice($this->list, 0, $limit);
+
     }
 
     function format() {
         foreach($this->list as $post) {
-            echo("<li><span><i>");
-            echo('<time datetime="' . date('d M, Y', $post->date). '" pubdate="">');
-            echo(date('d M, Y', $post->date));
-            echo("</time></i></span>");
-            echo('<a href="index.php');
+	    echo("<li><span><i>");
+            $formattedDate = date('d M, Y', $post->date);
+            echo('<time datetime="' . $formattedDate . '" pubdate="">');
+            echo($formattedDate);
+            echo("</time></i></span>");	
+	    echo('<a href="index.php');
             gen_url($page='post');
             echo('&post_title=' . $post->file .'">' . $post->title . "</a>");
             echo("</li>");

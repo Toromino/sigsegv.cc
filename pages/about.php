@@ -27,7 +27,7 @@
         default:
 	    print(parse_md('pages/about', 'introduction'));
 	    print('<ul class="blog-posts">');
-  	    $list = new PostCollection();
+  	    $list = new PostCollection(5);
   	    $list->format();
 	    print('</ul>');
             print(parse_md('pages/about', 'contact'));
