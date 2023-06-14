@@ -12,18 +12,15 @@
 	--scrollbar-thumb-color: #8b8b8b;
 }
 
-
 body {
-	background-color: #fff;
-  margin: auto;
-  padding: 20px;
-  text-align: left;
-  font-family: Verdana, sans-serif;
-  background-color: #fff;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.5;
-  color: #444;
+	margin: auto;
+	padding: 20px;
+	text-align: left;
+	font-family: Verdana, sans-serif;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+	color: #444;
 	margin: auto;
 	max-width: 720px;
 }
@@ -33,78 +30,200 @@ body {
 }
 
 #footer {
-  float: left;
-  position: relative;
-  left: 25%;
-  text-align: center;
+	text-align: center;
 }
 
 #footer p {
-  margin: 0px;
-  padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 #footer a {
-  font-size: small;
+	font-size: small;
 }
 
 .pagination {
-  display: block;
-  background: #f8f8f8;
-  font-size: 14px;
-  float: right;
-  border-radius: 5px;
+	display: block;
+	background: #f8f8f8;
+	font-size: 14px;
+	float: right;
+	border-radius: 5px;
 }
 
 .pagination ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 10px;
 }
 
-.pagination li:not(:last-child){
-  border-bottom: 1px solid var(--focus-color);
-  padding-bottom: 5px;
+.pagination li:not(:last-child) {
+	border-bottom: 1px solid var(--focus-color);
+	padding-bottom: 5px;
 }
 
 .pill-menu {
-  position: relative;
-  background: #f8f8f8;
-  border-radius: 5px;
-  padding: 8px;
-  float: left;
+	float:left;
+	position: relative;
+	background: #f8f8f8;
+	border-radius: 5px;
+	padding: 8px;
+	margin-bottom: 10px;
 }
 
 .pill-menu ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .blog-posts {
-  display: inline-block;  
-  margin: unset;
-  width: 100%;
+	display: inline-block;
+	margin: unset;
+	width: 100%;
 }
 
 .pill-menu li {
-  float: left;
+	float: left;
 }
 
 .pill-menu a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.pill-menu li:not(:last-child){
-  border-right: 1px solid var(--focus-color);
-  margin-right: 8px;
-  padding-right: 8px;
+.pill-menu li:not(:last-child) {
+	border-right: 1px solid var(--focus-color);
+	margin-right: 8px;
+	padding-right: 8px;
 }
 
 .pagination a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .center {
-  justify-content: center !important;
+	justify-content: center !important;
 }
+
+#about-wrapper {
+	background: url(../img/header.png) no-repeat;
+	background-size: cover;
+	background-position: 0% 20%;
+	border-radius: 5px 5px 0px 0px;
+	height: 100px;
+	width: 100%;
+	margin-top: 10px;
+	position: relative;
+}
+
+#about-name {
+	color: #f2f2f2;
+	font-size: 22px;
+	position: absolute;
+	bottom: 50px;
+	left: 140px;
+}
+
+#about-picture {
+	border-radius: 5px;
+	position: absolute;
+	left: 20px;
+	bottom: -20px;
+	width: 100px;
+	z-index: 2;
+}
+
+#about-shadow {
+	background: linear-gradient(to top, rgba(29, 37, 44, 0.65) 20%, rgba(0, 0, 0, 0) 100%);
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	position: absolute;
+}
+
+#nav-border {
+	position: absolute;
+	top: 130px;
+	width: 720px;
+	background: #f2f2f2;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.nav {
+	display: flex;
+	margin-left: 25%;
+}
+
+.nav-link {
+	padding: .5rem 1rem;
+	text-decoration: none;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+	#about-wrapper {
+		display: none;
+	}
+
+	#nav-border {
+		position: relative;
+		top: 0;
+		width: 100%;
+		margin-top: 0;
+		border-radius: 0;
+	}
+
+	.nav {
+		margin: 0;
+		justify-content: center;
+	}
+
+	.nav-link {
+		display: block;
+		padding: .5rem 1rem;
+		font-size: 20px;
+	}
+
+	.pagination {
+		float: none;
+		text-align: center;
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+
+	.pill-menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.pill-menu li:not(:last-child) {
+		border-right: none;
+		margin-right: 0;
+		padding-right: 0;
+		margin-bottom: 8px;
+	}
+
+	.pill-menu a {
+		padding: .5rem 1rem;
+		font-size: 16px;
+	}
+
+	.blog-posts {
+		display: block;
+	}
+
+	.center {
+		justify-content: unset !important;
+	}
+
+	#content {
+		margin-top: 0;
+	}
+
+	#footer {
+		left: 0;
+		width: 100%;
+	}
+}
+

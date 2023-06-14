@@ -23,9 +23,8 @@ function parse_md($type, $title) {
     <title>SIGSEGV</title>
     <meta charset="utf-8">
     <?php if ($_GET['style'] != 'none') { ?>
-    <link rel="stylesheet" type="text/css" href="static/css/header.css">
     <link rel="stylesheet" type="text/css" href="static/css/markup.css">
-    <link rel="stylesheet" type="text/css" href="static/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="static/css/skeleton.css?v=1.1">
     <?php } ?>
 </head>
 <body>
