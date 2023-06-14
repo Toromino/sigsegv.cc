@@ -3,6 +3,7 @@ use Michelf\MarkdownExtra;
 
 class Post {
     public $title;
+    public $visibility;
     public $file;
     public $date;
     public $tags;
@@ -38,7 +39,9 @@ class PostCollection {
     }
 
     function format() {
-        foreach($this->list as $post) {
+	    foreach($this->list as $post) {
+		    if ($post->visibility == "public") {
+
 	    echo("<li><span><i>");
             $formattedDate = date('d M, Y', $post->date);
             echo('<time datetime="' . $formattedDate . '" pubdate="">');
@@ -47,7 +50,8 @@ class PostCollection {
 	    echo('<a href="index.php');
             gen_url($page='post');
             echo('&post_title=' . $post->file .'">' . $post->title . "</a>");
-            echo("</li>");
+	    echo("</li>");
+		    }
         }
     }
 }
@@ -61,6 +65,7 @@ function read_post($title, $only_header=false) {
     $post->file = $title;
     $post->date = strtotime($head->{'date'});
     $post->tags = $head->{'tags'};
+    $post->visibility = $head->{'visibility'};
 
     if (!$only_header) {
         while(($str = fgets($file)) !== false) {

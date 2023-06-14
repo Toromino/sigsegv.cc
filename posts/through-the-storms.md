@@ -1,4 +1,4 @@
-{"title": "Through the Storms and Charting the Unknown", "date": "2023-06-05T10:00:27+01:00","category": "technology", "tags": [], "draft": false}
+{"title": "Through the Storms and Charting the Unknown", "date": "2023-06-05T10:00:27+01:00","category": "technology", "tags": [], "visibility": "public"}
 Hello friends,
 
 this is a more personal blog than the previous ones. It has been too long since I have reached out to most of you. In recent months, I have found myself struggling in a difficult and challenging place. I have experienced the pain of losing people very close to me, and I have made the mistake of trusting the wrong individiduals. These experience have caused me to become more cautious and guarded about who I allow into my life, triggering waves of anxiety that I have had to confront.

@@ -1,4 +1,4 @@
-{"title": "How to play Cry of Fear 1.6a on Proton", "date": "2021-02-12T12:55:27+01:00","category": "technology", "tags": [], "draft": false}
+{"title": "How to play Cry of Fear 1.6a on Proton", "date": "2021-02-12T12:55:27+01:00","category": "technology", "tags": [], "visibility": "public"}
 Cry of Fear is a psychological survival horror game taking place in a
 deserted town. I have a lot of memories playing Cry of Fear when it was
 released as a mod for Half-Life. However, I have not played it much

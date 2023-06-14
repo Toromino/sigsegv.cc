@@ -1,4 +1,4 @@
-{"title": "Mozilla deciding against an open web", "date": "2019-05-19T23:43:02+02:00", "category": "technology", "tags": [], "draft": false}
+{"title": "Mozilla deciding against an open web", "date": "2019-05-19T23:43:02+02:00", "category": "technology", "tags": [], "visibility": "public"}
 Mozilla has been using IRC as their main communications platform for over two decades now. But on April 26th Mozilla Community Manager Michael Hoye announced their plans to move away from IRC. According to Hoye, IRC cannot meet Mozilla's expectations anymore. Using IRC would create an unnecessary technical barrier for newcomers. Which is a valid argument, considering that many young developers have never used or heard of IRC.
 
 However, Mozilla's plans concerning products which could replace their IRC server are rather vague. Yes, Mr. Hoye explicitly said:
