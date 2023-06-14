@@ -2,13 +2,15 @@
 use Michelf\MarkdownExtra;
 
 // Maybe use an array
-function gen_url($page="", $subpage="", $style="") {
-    print("?page=" . (empty($page) ? $_GET['page'] : $page));
-    print(!empty($subpage) ? "&subpage=".$subpage : '');
+function gen_url($page = "", $subpage = "", $style = "") {
+    $url = "?page=" . (empty($page) ? $_GET['page'] : $page);
+    $url .= (!empty($subpage) ? "&subpage=" . $subpage : '');
     if (!empty($_GET['post_title']) && $_GET['page'] == 'post') {
-        echo("&post_title=".$_GET['post_title']);
+        $url .= "&post_title=" . $_GET['post_title'];
     }
-    print("&style=" . (empty($style) ? $_GET['style'] : $style));
+    $url .= "&style=" . (empty($style) ? $_GET['style'] : $style);
+
+    echo $url;
 }
 
 function parse_md($type, $title) {
