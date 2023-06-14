@@ -1,4 +1,6 @@
 <?php
+use FeedIo\FeedIo;
+use FeedIo\Feed;
 use Michelf\MarkdownExtra;
 
 class Post {
@@ -53,6 +55,26 @@ class PostCollection {
 	    echo("</li>");
 		    }
         }
+    }
+
+    function feed() {
+	    $feed = new Feed();
+	    $client = new \FeedIo\Adapter\Http\Client(new Symfony\Component\HttpClient\HttplugClient());
+	$feedIo = new FeedIo($client);
+	$feed->setLink('https://sigsegv.cc');
+	$feed->setTitle('SIGSEGV');
+	$feed->setDescription('Toromino\'s blog!');
+
+	foreach($this->list as $post) {
+	    $item = $feed->newItem();
+	    $item->setTitle($post->title);
+	    $item->setLink('index.php?page=post&post_title=' . $post->file);
+	    $item->setContent($post->data);
+	    $item->setLastModified(new DateTime('@' . $post->date));
+	    $feed->add($item);
+	}
+
+	return $feedIo->format($feed, 'atom');
     }
 }
 

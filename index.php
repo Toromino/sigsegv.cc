@@ -1,7 +1,7 @@
 <?php 
 // include Composer autoload
 require __DIR__ . '/vendor/autoload.php';
-
+require_once('feed.inc.php');
 if (!isset($_GET['page'])) {
     $_GET['page'] = 'about';
 }
@@ -23,4 +23,5 @@ $GLOBALS['navmenu'] = array (
 
 // render HTML skeleton
 require_once('elements/skeleton.php');
+generate_feed(); 
 ?>

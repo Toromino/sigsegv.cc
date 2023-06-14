@@ -2,12 +2,19 @@
     "name": "foxhkron/sigsegv.cc",
     "type": "project",
     "require": {
-        "michelf/php-markdown": "^1.9"
+        "michelf/php-markdown": "^1.9",
+        "debril/feed-io": "^6.0",
+        "symfony/http-client": "^6.3"
     },
     "authors": [
         {
             "name": "Toromino",
             "email": "foxhkron@cybre.club"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
 }
