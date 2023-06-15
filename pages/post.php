@@ -3,7 +3,7 @@ require_once('post.inc.php');
 
 if (isset($_GET['post_title'])) {
     if (file_exists('posts/' . $_GET['post_title'] . '.md')) {
-        $post = read_post($_GET['post_title']);
+        $post = read_post($_GET['post_title'], PostDataType::Formatted);
         $post->format();
     } elseif (file_exists('posts/' . $_GET['post_title'] . '.php'))  {
         require_once('posts/' . $_GET['post_title'] . '.php');

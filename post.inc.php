@@ -3,6 +3,12 @@ use FeedIo\FeedIo;
 use FeedIo\Feed;
 use Michelf\MarkdownExtra;
 
+enum PostDataType {
+    case None;
+    case Raw;
+    case Formatted;
+}
+
 class Post {
     public $title;
     public $visibility;
@@ -10,6 +16,7 @@ class Post {
     public $date;
     public $tags;
     public $data;
+    public $data_type;
 
     function format() {
         echo("<h1>" . $this->title . "</h1>");
@@ -21,11 +28,11 @@ class Post {
 class PostCollection {
     private $list = [];
 
-    function __construct($limit = 100) {
+    function __construct($limit = 100, PostDataType $data_type = PostDataType::None) {
 	$files = glob('posts/*.md');
 	
 	foreach ($files as $file) {
-		array_push($this->list, read_post(basename($file, '.md'), true));
+		array_push($this->list, read_post(basename($file, '.md'), $data_type));
 	}
 
 	usort($this->list, function ($a, $b) {
@@ -58,8 +65,8 @@ class PostCollection {
     }
 
     function feed() {
-	    $feed = new Feed();
-	    $client = new \FeedIo\Adapter\Http\Client(new Symfony\Component\HttpClient\HttplugClient());
+	$feed = new Feed();
+	$client = new \FeedIo\Adapter\Http\Client(new Symfony\Component\HttpClient\HttplugClient());
 	$feedIo = new FeedIo($client);
 	$feed->setLink('https://sigsegv.cc');
 	$feed->setTitle('SIGSEGV');
@@ -78,7 +85,7 @@ class PostCollection {
     }
 }
 
-function read_post($title, $only_header=false) {
+function read_post($title, PostDataType $data_type = PostDataType::None) {
     $post = new Post();
     $file = fopen('posts/' . $title . '.md', 'r');
     $head = json_decode(fgets($file));
@@ -88,12 +95,16 @@ function read_post($title, $only_header=false) {
     $post->date = strtotime($head->{'date'});
     $post->tags = $head->{'tags'};
     $post->visibility = $head->{'visibility'};
+    $post->data_type = $data_type;
 
-    if (!$only_header) {
-        while(($str = fgets($file)) !== false) {
-            $post->data .= $str;
-        }
-        $post->data = MarkdownExtra::defaultTransform($post->data);
+    if ($post->data_type != PostDataType::None) {
+	    while(($str = fgets($file)) !== false) {
+		$post->data .= $str;
+	    }
+
+	    if($post->data_type == PostDataType::Formatted) {
+		$post->data = MarkdownExtra::defaultTransform($post->data);
+	    }
     }
 
     fclose($file);
